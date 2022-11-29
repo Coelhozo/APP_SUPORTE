@@ -37,7 +37,7 @@ public class UsuarioDAO {
         String cmd = null;
 
         if (p == 3) {
-            cmd = "delete from area where idUser = ?";
+            cmd = "delete from user where idUser = ?";
         } else if(p == 4){
             cmd = "update user set ? = ? where idUser = ?";
         }

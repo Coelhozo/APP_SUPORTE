@@ -32,7 +32,6 @@ public class Conexao {
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(url, user, password);
 
-            
             userCon = new UsuarioCon(cmd, con, nome, senha, idEnt, email, p, id);
             con.close();
         }catch (Exception e){

@@ -2,7 +2,7 @@ package Interfaces;
 
 import DAO.UsuarioDAO;
 import Interfaces.Components.Butao;
-import Interfaces.Components.janelaEdicaoArea;
+import Interfaces.Components.janelaEdicaoUsuario;
 
 import javax.swing.*;
 import java.awt.Font;
@@ -92,7 +92,7 @@ public class Usuario {
                     System.out.println(rows.length);
                     String id = tabela.getValueAt(rows[c], 0).toString();
                    
-                    new janelaEdicaoArea(Integer.parseInt(id));
+                    new janelaEdicaoUsuario(Integer.parseInt(id));
                 }
             }
         });
