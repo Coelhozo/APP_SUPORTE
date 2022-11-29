@@ -83,14 +83,6 @@ public class UsuarioCon extends GetData{
     public void editar(){
         String[] cols = {"nombreDeUsuario", "contrasena", "email", "idEntrevistador"};
         String[] values = {nome, senha, email, ""+idEnt};
-        ArrayList<UserDados> usuarios = super.getUsers();
-        UserDados dados = null;
-
-        for(int c = 0; c < usuarios.size(); c++){
-            if (usuarios.get(c).getID() == id){
-                dados = usuarios.get(c);
-            }
-        }
 
         try{
             PreparedStatement stmt = null;
@@ -103,29 +95,6 @@ public class UsuarioCon extends GetData{
                     }else{
                         stmt.setString(1, values[c]);
                     }
-                }else{
-                    String col = null;
-
-                    switch (c){
-                        case 1:
-                            col = dados.getNome();
-                            break;
-                        case 2:
-                            col = dados.getSenha();
-                            break;
-                        case 3:
-                            col = dados.getEmail();
-                            break;
-                        case 4:
-                            col = dados.getIdEnt().toString();
-                            break;
-                    }
-
-                    if(c == 3){
-                        stmt.setInt(1, Integer.parseInt(col));
-                    }else{
-                        stmt.setString(1, col);
-                    }   
                 }
                 stmt.setInt(2, id);
                 stmt.executeUpdate();

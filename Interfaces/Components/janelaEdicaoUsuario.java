@@ -4,6 +4,9 @@ import javax.swing.*;
 import java.awt.Font;
 import java.awt.event.*;
 import DAO.UsuarioDAO;
+import DAO.Dados.UserDados;
+import Conexao.GetData;
+import java.util.ArrayList;
 public class janelaEdicaoUsuario extends WindowAdapter{
     private int telaHeight = 450, telaWidth = 600, textoHeight = 25, textoWidth = telaWidth/2, gap = 30, paddinTop = 10;
     JFrame tela = new JFrame();
@@ -38,10 +41,42 @@ public class janelaEdicaoUsuario extends WindowAdapter{
         editar.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*9+paddinTop, textoWidth, textoHeight);
         editar.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
+                String valores[] = {nomeInput.getText(), senhaInput.getText(), emailInput.getText(), idEntInput.getText()};
+                
+                ArrayList<UserDados> usuarios = GetData.getUsers();
+                UserDados dados = null;
+
+                for(int c = 0; c < usuarios.size(); c++){
+                    if (usuarios.get(c).getID() == id){
+                        dados = usuarios.get(c);
+                    }
+                }
+
+                for(int c = 0; c < valores.length; c++){
+                    if(valores[c].isBlank()){
+                        String col = null;
+
+                        switch (c){
+                            case 0:
+                                col = dados.getNome();
+                                break;
+                            case 1:
+                                col = dados.getSenha();
+                                break;
+                            case 2:
+                                col = dados.getEmail();
+                                break;
+                            case 3:
+                                col = dados.getIdEnt().toString();
+                                break;
+                        }
+                        valores[c] = col;  
+                    }
+                }
                 try{
-                    new UsuarioDAO(nomeInput.getText(), 4, id, senhaInput.getText(), emailInput.getText(), Integer.parseInt(idEntInput.getText()));
+                    new UsuarioDAO(""+valores[0].toString(), 4, id, valores[1].toString(), valores[2].toString(), Integer.parseInt(valores[3].toString()));
                 }catch(Exception ex){
-                    System.out.println(ex.getMessage());
+                    System.out.println(ex.getCause());
                 }
             }
         });

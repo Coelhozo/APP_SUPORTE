@@ -5,22 +5,22 @@ import DAO.Dados.AreaDados;
 import DAO.Dados.UserDados;
 
 public class GetData {
-    protected ArrayList<AreaDados> areas = new ArrayList<>();
-    protected ArrayList<UserDados> users = new ArrayList<>();
+    protected static ArrayList<AreaDados> areas = new ArrayList<>();
+    protected static ArrayList<UserDados> users = new ArrayList<>();
     
     public void setAreas(ArrayList<AreaDados> areas){
-        this.areas = areas;
+        GetData.areas = areas;
     }
 
     public void setUsers(ArrayList<UserDados> users){
-        this.users = users;
+        GetData.users = users;
     }
 
-    public ArrayList<AreaDados> getAreas() {
+    public static ArrayList<AreaDados> getAreas() {
         return areas;
     }
 
-    public ArrayList<UserDados> getUsers(){
+    public static ArrayList<UserDados> getUsers(){
         return users;
     }
 }

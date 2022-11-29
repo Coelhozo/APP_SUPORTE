@@ -9,14 +9,14 @@ public class UsuarioDAO {
     private Conexao con;
 
     private String nome = null, senha = null, email = null;
-    private Integer idEnt = null, id = null;
+    private Integer idEnt = null;
 
     public UsuarioDAO(String nome, int p, Integer id, String senha, String email, Integer idEnt) {
         this.nome = nome;
         this.senha = senha;
         this.email = email;
         this.idEnt = idEnt;
-        System.out.println("email");
+        
         try{
             if (id != null){
                 con = new Conexao(criarComando(p, id), p, this.nome, this.senha, this.idEnt, this.email, id);
