@@ -95,11 +95,12 @@ public class UsuarioCon extends GetData{
         try{
             PreparedStatement stmt = con.prepareStatement(cmd);
             for (int c = 0; c < cols.length; c++){
+                stmt.setString(1, cols[c]);
                 if(values[c] != null){
                     if(c == 3){
-                        stmt.setInt(c, Integer.parseInt(values[c]));
+                        stmt.setInt(2, Integer.parseInt(values[c]));
                     }else{
-                        stmt.setString(c, values[c]);
+                        stmt.setString(2, values[c]);
                     }
                 }else{
                     String col = null;
@@ -120,12 +121,13 @@ public class UsuarioCon extends GetData{
                     }
 
                     if(c == 3){
-                        stmt.setInt(c, Integer.parseInt(values[c]));
+                        stmt.setInt(2, Integer.parseInt(col));
                     }else{
-                        stmt.setString(c, col);
+                        stmt.setString(2, col);
                     }   
                 }
             }
+            stmt.setInt(3, id);
             stmt.executeUpdate();
         }catch(Exception e){
             System.out.println(e);

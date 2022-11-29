@@ -3,10 +3,9 @@ package Interfaces.Components;
 import javax.swing.*;
 import java.awt.Font;
 import java.awt.event.*;
-
-import DAO.AreaDAO;
+import DAO.UsuarioDAO;
 public class janelaEdicaoUsuario extends WindowAdapter{
-    private int telaHeight = 600, telaWidth = 600, textoHeight = 25, textoWidth = telaWidth/2, gap = 30, paddinTop = 10;
+    private int telaHeight = 450, telaWidth = 600, textoHeight = 25, textoWidth = telaWidth/2, gap = 30, paddinTop = 10;
     JFrame tela = new JFrame();
     public janelaEdicaoUsuario(Integer id){
 
@@ -39,12 +38,12 @@ public class janelaEdicaoUsuario extends WindowAdapter{
         editar.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*9+paddinTop, textoWidth, textoHeight);
         editar.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
-                new UsuarioDAO(nomeInput.getText(), 4, id);
+                new UsuarioDAO(nomeInput.getText(), 4, id, senhaInput.getText(), emailInput.getText(), Integer.parseInt(idEntInput.getText()));
             }
         });
 
         JButton fechar = new Butao("FECHAR");
-        fechar.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*4+paddinTop, textoWidth, textoHeight);
+        fechar.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*10+paddinTop, textoWidth, textoHeight);
         fechar.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 fecharJanela(null);
