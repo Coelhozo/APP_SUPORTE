@@ -87,7 +87,7 @@ public class AreaCon extends GetData{
         }
     }   
 
-    public ArrayList<AreaDados> getAreas(){
+    public ArrayList<AreaDados> getAllAreas(){
         return super.getAreas();
     }
 }

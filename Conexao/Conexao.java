@@ -40,7 +40,7 @@ public class Conexao {
     }
 
     public ArrayList<AreaDados> getAreas(){
-        return areaCon.getAreas();
+        return areaCon.getAllAreas();
     }
 
     public ArrayList<UserDados> getUsuarios(){
