@@ -31,4 +31,6 @@
  * f.setLayout(null);
  * f.setVisible(true);
  * f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+ * 
+ * String s = String.format("%s%s",s1,s2);   //String 3 to store the result 
  */

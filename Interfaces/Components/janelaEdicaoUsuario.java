@@ -38,7 +38,11 @@ public class janelaEdicaoUsuario extends WindowAdapter{
         editar.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*9+paddinTop, textoWidth, textoHeight);
         editar.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
-                new UsuarioDAO(nomeInput.getText(), 4, id, senhaInput.getText(), emailInput.getText(), Integer.parseInt(idEntInput.getText()));
+                try{
+                    new UsuarioDAO(nomeInput.getText(), 4, id, senhaInput.getText(), emailInput.getText(), Integer.parseInt(idEntInput.getText()));
+                }catch(Exception ex){
+                    System.out.println(ex.getMessage());
+                }
             }
         });
 

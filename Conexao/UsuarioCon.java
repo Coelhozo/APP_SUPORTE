@@ -93,14 +93,15 @@ public class UsuarioCon extends GetData{
         }
 
         try{
-            PreparedStatement stmt = con.prepareStatement(cmd);
+            PreparedStatement stmt = null;
             for (int c = 0; c < cols.length; c++){
-                stmt.setString(1, cols[c]);
+                stmt = con.prepareStatement(String.format(cmd, cols[c]));
                 if(values[c] != null){
                     if(c == 3){
-                        stmt.setInt(2, Integer.parseInt(values[c]));
+                        stmt.setInt(1, Integer.parseInt(values[c]));
+                        
                     }else{
-                        stmt.setString(2, values[c]);
+                        stmt.setString(1, values[c]);
                     }
                 }else{
                     String col = null;
@@ -121,16 +122,16 @@ public class UsuarioCon extends GetData{
                     }
 
                     if(c == 3){
-                        stmt.setInt(2, Integer.parseInt(col));
+                        stmt.setInt(1, Integer.parseInt(col));
                     }else{
-                        stmt.setString(2, col);
+                        stmt.setString(1, col);
                     }   
                 }
+                stmt.setInt(2, id);
+                stmt.executeUpdate();
             }
-            stmt.setInt(3, id);
-            stmt.executeUpdate();
         }catch(Exception e){
-            System.out.println(e);
+            System.out.println(e.getMessage());
         }
     }   
 

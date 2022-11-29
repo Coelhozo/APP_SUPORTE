@@ -89,9 +89,8 @@ public class Usuario {
             public void actionPerformed(ActionEvent e){
                 int[] rows = tabela.getSelectedRows();
                 for(int c = 0; c < rows.length; c++){
-                    System.out.println(rows.length);
+                    
                     String id = tabela.getValueAt(rows[c], 0).toString();
-                   
                     new janelaEdicaoUsuario(Integer.parseInt(id));
                 }
             }
