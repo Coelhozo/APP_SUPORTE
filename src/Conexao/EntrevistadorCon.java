@@ -78,7 +78,7 @@ public class EntrevistadorCon extends GetData{
             stmt.executeUpdate();
 
         }catch(Exception e){
-            JOptionPane.showMessageDialog(null, "Não pode deletar esse entrevistador, verifique a tabela usuário");
+            JOptionPane.showMessageDialog(null, "Não se puede eliminar le entrevistador, revisar la tabla de usuários");
         }
     }
     
