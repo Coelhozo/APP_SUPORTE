@@ -42,7 +42,7 @@ public class Usuario {
         JTextField idEntInput = new JTextField();
         idEntInput.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*8+paddinTop, textoWidth, textoHeight);
 
-        JButton inserir = new Butao("INSERIR USUÁRIO");
+        JButton inserir = new Butao("INSERTAR USUÁRIO");
         inserir.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*9+paddinTop, textoWidth, textoHeight);
         inserir.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
@@ -64,7 +64,7 @@ public class Usuario {
             lin[i] = linhas.get(i);
         }
 
-        String[] colNomes = {"ID", "Nombre", "Email", "Sena", "COD ENT."};
+        String[] colNomes = {"ID", "Nombre", "Email", "Clave", "COD ENT."};
         JTable tabela = new JTable(lin, colNomes);
         
         JScrollPane sp = new JScrollPane(tabela);
@@ -83,7 +83,7 @@ public class Usuario {
             }
         });
         
-        JButton editar = new Butao("EDITAR ÁREA");
+        JButton editar = new Butao("PARA EDITAR USUÁRIO");
         editar.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*16+paddinTop, textoWidth, textoHeight);
         editar.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
@@ -95,7 +95,7 @@ public class Usuario {
             }
         });
 
-        JButton fechar = new Butao("FECHAR");
+        JButton fechar = new Butao("CERCA");
         fechar.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*17+paddinTop, textoWidth, textoHeight);
         fechar.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){

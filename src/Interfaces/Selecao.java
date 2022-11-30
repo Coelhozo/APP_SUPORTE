@@ -40,7 +40,7 @@ public class Selecao extends WindowAdapter{
             }
         });
     
-        JButton fechar = new Butao("FECHAR");
+        JButton fechar = new Butao("CERCAR");
         fechar.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*5+paddinTop, textoWidth, textoHeight);
         fechar.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){

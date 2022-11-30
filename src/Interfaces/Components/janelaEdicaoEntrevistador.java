@@ -13,32 +13,32 @@ public class janelaEdicaoEntrevistador {
     JFrame tela = new JFrame();
     public janelaEdicaoEntrevistador(Integer id){
 
-        JLabel titulo = new JLabel("Edição");
+        JLabel titulo = new JLabel("Edicíon");
         titulo.setFont(new Font("Arial", Font.BOLD, textoHeight));
         titulo.setBounds(telaWidth - 3*textoWidth/2, textoHeight+paddinTop, textoWidth, textoHeight);
         titulo.setHorizontalAlignment(JTextField.CENTER);
 
-        JLabel nome = new JLabel("ESCREVA O NOME");
+        JLabel nome = new JLabel("ESCRIBIR EL NOMBRE");
         nome.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*1+paddinTop, textoWidth, textoHeight);
         JTextField nomeInput = new JTextField();
         nomeInput.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*2+paddinTop, textoWidth, textoHeight);
 
-        JLabel cpf = new JLabel("ESCREVA O CPF");
+        JLabel cpf = new JLabel("ESCREBIR EL CPF");
         cpf.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*3+paddinTop, textoWidth, textoHeight);
         JTextField cpfInput = new JTextField();
         cpfInput.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*4+paddinTop, textoWidth, textoHeight);
 
-        JLabel rg = new JLabel("ESCREVA O RG");
+        JLabel rg = new JLabel("ESCRIBIR EL RG");
         rg.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*5+paddinTop, textoWidth, textoHeight);
         JTextField rgInput = new JTextField();
         rgInput.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*6+paddinTop, textoWidth, textoHeight);
 
-        JLabel dataNasc = new JLabel("ESCREVA A DATA NASCIMENTO");
+        JLabel dataNasc = new JLabel("ESCRIBIR LA FECHA DE NASCIMENTO");
         dataNasc.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*7+paddinTop, textoWidth, textoHeight);
         JTextField dataNascInput = new JTextField();
         dataNascInput.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*8+paddinTop, textoWidth, textoHeight);
 
-        JLabel matricula = new JLabel("ESCREVA A MATRÍCULA");
+        JLabel matricula = new JLabel("ESCRIBIR LA MATRÍCULA");
         matricula.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*9+paddinTop, textoWidth, textoHeight);
         JTextField matriculaInput = new JTextField();
         matriculaInput.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*10+paddinTop, textoWidth, textoHeight);

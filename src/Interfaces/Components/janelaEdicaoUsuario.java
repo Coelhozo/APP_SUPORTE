@@ -12,32 +12,32 @@ public class janelaEdicaoUsuario extends WindowAdapter{
     JFrame tela = new JFrame();
     public janelaEdicaoUsuario(Integer id){
 
-        JLabel titulo = new JLabel("Edição");
+        JLabel titulo = new JLabel("Edicíon");
         titulo.setFont(new Font("Arial", Font.BOLD, textoHeight));
         titulo.setBounds(telaWidth - 3*textoWidth/2, textoHeight+paddinTop, textoWidth, textoHeight);
         titulo.setHorizontalAlignment(JTextField.CENTER);
 
-        JLabel nome = new JLabel("ESCREVA O NOME");
+        JLabel nome = new JLabel("ESCREBIR EL NOMBRE");
         nome.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*1+paddinTop, textoWidth, textoHeight);
         JTextField nomeInput = new JTextField();
         nomeInput.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*2+paddinTop, textoWidth, textoHeight);
 
-        JLabel senha = new JLabel("ESCREVA O SENHA");
+        JLabel senha = new JLabel("ESCRIBIR LA CLAVE");
         senha.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*3+paddinTop, textoWidth, textoHeight);
         JTextField senhaInput = new JTextField();
         senhaInput.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*4+paddinTop, textoWidth, textoHeight);
 
-        JLabel email = new JLabel("ESCREVA O EMAIL");
+        JLabel email = new JLabel("ESCRIBIR EL EMAIL");
         email.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*5+paddinTop, textoWidth, textoHeight);
         JTextField emailInput = new JTextField();
         emailInput.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*6+paddinTop, textoWidth, textoHeight);
 
-        JLabel idEnt = new JLabel("ESCREVA O COD ENT.");
+        JLabel idEnt = new JLabel("ESCRIBIR EL COD ENT.");
         idEnt.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*7+paddinTop, textoWidth, textoHeight);
         JTextField idEntInput = new JTextField();
         idEntInput.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*8+paddinTop, textoWidth, textoHeight);
 
-        JButton editar = new Butao("EDITAR USUÁRIO");
+        JButton editar = new Butao("PARA EDITAR USUÁRIO");
         editar.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*9+paddinTop, textoWidth, textoHeight);
         editar.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
@@ -81,7 +81,7 @@ public class janelaEdicaoUsuario extends WindowAdapter{
             }
         });
 
-        JButton fechar = new Butao("FECHAR");
+        JButton fechar = new Butao("CERCAR");
         fechar.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*10+paddinTop, textoWidth, textoHeight);
         fechar.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){

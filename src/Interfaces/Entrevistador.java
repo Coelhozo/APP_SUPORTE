@@ -68,13 +68,13 @@ public class Entrevistador extends WindowAdapter{
             lin[i] = linhas.get(i);
         }
 
-        String[] colNomes = {"ID", "Nombre", "CPF", "RG", "Data Nascimento", "Matrícula"};
+        String[] colNomes = {"ID", "Nombre", "CPF", "RG", "Fecha de Nascimento", "Matrícula"};
         JTable tabela = new JTable(lin, colNomes);
         
         JScrollPane sp = new JScrollPane(tabela);
         sp.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*12+paddinTop, textoWidth, textoHeight*6);
         
-        JButton deletar = new Butao("DELETAR ENTREVISTADOR");
+        JButton deletar = new Butao("BORRAR ENTREVISTADOR");
         deletar.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*17+paddinTop, textoWidth, textoHeight);
         deletar.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
@@ -87,7 +87,7 @@ public class Entrevistador extends WindowAdapter{
             }
         });
         
-        JButton editar = new Butao("EDITAR ÁREA");
+        JButton editar = new Butao("PARA EDITAR ENTREVISTADOR");
         editar.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*18+paddinTop, textoWidth, textoHeight);
         editar.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
@@ -99,7 +99,7 @@ public class Entrevistador extends WindowAdapter{
             }
         });
 
-        JButton fechar = new Butao("FECHAR");
+        JButton fechar = new Butao("CERCA");
         fechar.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*19+paddinTop, textoWidth, textoHeight);
         fechar.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){

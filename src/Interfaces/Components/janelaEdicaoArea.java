@@ -11,17 +11,17 @@ public class janelaEdicaoArea extends WindowAdapter{
     JFrame tela = new JFrame();
     public janelaEdicaoArea(Integer id){
 
-        JLabel titulo = new JLabel("Edição");
+        JLabel titulo = new JLabel("Edicíon");
         titulo.setFont(new Font("Arial", Font.BOLD, textoHeight));
         titulo.setBounds(telaWidth - 3*textoWidth/2, textoHeight+paddinTop, textoWidth, textoHeight);
         titulo.setHorizontalAlignment(JTextField.CENTER);
 
-        JLabel nome = new JLabel("ESCREVA O NOME NOVO");
+        JLabel nome = new JLabel("ESCRIBIR EL NUEVO NOMBRE");
         nome.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*1+paddinTop, textoWidth, textoHeight);
         JTextField nomeInput = new JTextField();
         nomeInput.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*2+paddinTop, textoWidth, textoHeight);
 
-        JButton editar = new Butao("EDITAR ÁREA");
+        JButton editar = new Butao("PARA EDITAR ÁREA");
         editar.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*3+paddinTop, textoWidth, textoHeight);
         editar.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
@@ -29,7 +29,7 @@ public class janelaEdicaoArea extends WindowAdapter{
             }
         });
 
-        JButton fechar = new Butao("FECHAR");
+        JButton fechar = new Butao("CERCA");
         fechar.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*4+paddinTop, textoWidth, textoHeight);
         fechar.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){

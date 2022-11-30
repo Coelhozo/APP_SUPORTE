@@ -21,12 +21,12 @@ public class Area extends WindowAdapter{
         titulo.setBounds(telaWidth - 3*textoWidth/2, textoHeight+paddinTop, textoWidth, textoHeight);
         titulo.setHorizontalAlignment(JTextField.CENTER);
 
-        JLabel pergunta = new JLabel("ESCREVA UMA NOVA ÁREA ABAIXO:");
+        JLabel pergunta = new JLabel("ESCRIBE UNA NUEVA ÁREA ABAJO:");
         pergunta.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*1+paddinTop, textoWidth, textoHeight);
         JTextField perguntaInput = new JTextField();
         perguntaInput.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*2+paddinTop, textoWidth, textoHeight);
 
-        JButton inserir = new Butao("INSERIR ÁREA");
+        JButton inserir = new Butao("INSERTAR ÁREA");
         inserir.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*3+paddinTop, textoWidth, textoHeight);
         inserir.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
@@ -48,13 +48,13 @@ public class Area extends WindowAdapter{
             lin[i] = linhas.get(i);
         }
 
-        String[] colNomes = {"ID", "Nome"};
+        String[] colNomes = {"ID", "Nombre"};
         JTable tabela = new JTable(lin, colNomes);
         
         JScrollPane sp = new JScrollPane(tabela);
         sp.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*4+paddinTop, textoWidth, textoHeight*5);
         
-        JButton deletar = new Butao("DELETAR ÁREA");
+        JButton deletar = new Butao("BORRAR ÁREA");
         deletar.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*8+paddinTop, textoWidth, textoHeight);
         deletar.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
@@ -67,7 +67,7 @@ public class Area extends WindowAdapter{
             }
         });
         
-        JButton editar = new Butao("EDITAR ÁREA");
+        JButton editar = new Butao("PARA EDITAR ÁREA");
         editar.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*9+paddinTop, textoWidth, textoHeight);
         editar.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
@@ -81,7 +81,7 @@ public class Area extends WindowAdapter{
             }
         });
 
-        JButton fechar = new Butao("FECHAR");
+        JButton fechar = new Butao("CERCAR");
         fechar.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*10+paddinTop, textoWidth, textoHeight);
         fechar.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
