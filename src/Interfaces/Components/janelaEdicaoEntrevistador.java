@@ -9,7 +9,7 @@ import Conexao.GetData;
 import java.util.ArrayList;
 
 public class janelaEdicaoEntrevistador {
-    private int telaHeight = 450, telaWidth = 600, textoHeight = 25, textoWidth = telaWidth/2, gap = 30, paddinTop = 10;
+    private int telaHeight = 500, telaWidth = 600, textoHeight = 25, textoWidth = telaWidth/2, gap = 30, paddinTop = 10;
     JFrame tela = new JFrame();
     public janelaEdicaoEntrevistador(Integer id){
 
@@ -49,12 +49,12 @@ public class janelaEdicaoEntrevistador {
             public void actionPerformed(ActionEvent e){
                 String valores[] = {nomeInput.getText(), cpfInput.getText(), rgInput.getText(), dataNascInput.getText(), matriculaInput.getText()};
                 
-                ArrayList<EntrevistadorDados> usuarios = GetData.getEntrevistadores();
+                ArrayList<EntrevistadorDados> entrevistadores = GetData.getEntrevistadores();
                 EntrevistadorDados dados = null;
 
-                for(int c = 0; c < usuarios.size(); c++){
-                    if (usuarios.get(c).getID() == id){
-                        dados = usuarios.get(c);
+                for(int c = 0; c < entrevistadores.size(); c++){
+                    if (entrevistadores.get(c).getID() == id){
+                        dados = entrevistadores.get(c);
                     }
                 }
 

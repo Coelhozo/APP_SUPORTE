@@ -12,6 +12,7 @@ public class Conexao {
     private AreaCon areaCon;
     private UsuarioCon userCon;
     private EntrevistadorCon entreCon;
+    private boolean isPossible;
 
     //conexao para as areas
     public Conexao(String cmd, int p, String nome, Integer id) throws SQLException{
@@ -64,6 +65,10 @@ public class Conexao {
 
     public ArrayList<EntrevistadorDados> getEntrevistadores(){
         return entreCon.getAllEntrevistadores();
+    }
+
+    public boolean isPossible(){
+        return isPossible;
     }
     
 }

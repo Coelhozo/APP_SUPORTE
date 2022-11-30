@@ -26,6 +26,11 @@ public class Selecao extends WindowAdapter{
     
         JButton entrevistador = new Butao("ENTREVISTADOR");
         entrevistador.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*3+paddinTop, textoWidth, textoHeight);
+        entrevistador.addActionListener(new ActionListener (){
+            public void actionPerformed(ActionEvent e){
+                new Entrevistador();
+            }
+        });
 
         JButton area = new Butao("ÁREA");
         area.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*4+paddinTop, textoWidth, textoHeight);

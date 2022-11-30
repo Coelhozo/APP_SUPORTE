@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.awt.event.*;
 
 public class Entrevistador extends WindowAdapter{
-    private int telaHeight = 700, telaWidth = 800, textoHeight = 25, textoWidth = telaWidth/2, gap = 30, paddinTop = 55;
+    private int telaHeight = 760, telaWidth = 800, textoHeight = 25, textoWidth = telaWidth/2, gap = 30, paddinTop = 55;
     private ArrayList<String[]> linhas = new ArrayList<>();
     JFrame tela = new JFrame();
 
@@ -75,20 +75,20 @@ public class Entrevistador extends WindowAdapter{
         sp.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*12+paddinTop, textoWidth, textoHeight*6);
         
         JButton deletar = new Butao("DELETAR ENTREVISTADOR");
-        deletar.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*16+paddinTop, textoWidth, textoHeight);
+        deletar.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*17+paddinTop, textoWidth, textoHeight);
         deletar.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 int[] rows = tabela.getSelectedRows();
                 for(int c = 0; c < rows.length; c++){
-
                     String id = tabela.getValueAt(rows[c], 0).toString();
+                
                     new EntrevistadorDAO(null, 3, null, null, null, null, Integer.parseInt(id));
                 }
             }
         });
         
         JButton editar = new Butao("EDITAR ÁREA");
-        editar.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*17+paddinTop, textoWidth, textoHeight);
+        editar.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*18+paddinTop, textoWidth, textoHeight);
         editar.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 int[] rows = tabela.getSelectedRows();
@@ -100,7 +100,7 @@ public class Entrevistador extends WindowAdapter{
         });
 
         JButton fechar = new Butao("FECHAR");
-        fechar.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*18+paddinTop, textoWidth, textoHeight);
+        fechar.setBounds(telaWidth - 3*textoWidth/2, textoHeight+gap*19+paddinTop, textoWidth, textoHeight);
         fechar.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 fecharJanela(null);

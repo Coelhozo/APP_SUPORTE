@@ -2,6 +2,7 @@ package Conexao;
 import java.sql.*;
 import java.util.ArrayList;
 import DAO.Dados.*;
+import javax.swing.JOptionPane;
 
 public class EntrevistadorCon extends GetData{
     private String nome, rg, cpf, cmd, dataNasc, matricula;
@@ -44,7 +45,7 @@ public class EntrevistadorCon extends GetData{
             stmt.setString(2, cpf);
             stmt.setString(3, rg);
             stmt.setString(4, dataNasc);
-            stmt.setString(5, matricula);
+            stmt.setInt(5, Integer.parseInt(matricula));
             stmt.executeUpdate();
 
         }catch(Exception e){
@@ -77,12 +78,12 @@ public class EntrevistadorCon extends GetData{
             stmt.executeUpdate();
 
         }catch(Exception e){
-            System.out.println("Impossível deletar: "+e);
+            JOptionPane.showMessageDialog(null, "Não pode deletar esse entrevistador, verifique a tabela usuário");
         }
     }
     
     public void editar(){
-        String[] cols = {"Nome", "CPF", "RG", "Data Nascimento", "Matrícula"};
+        String[] cols = {"Nome", "CPF", "RG", "dataNascimento", "Matrícula"};
         String[] values = {nome, cpf, rg, dataNasc, matricula};
 
         try{
@@ -90,6 +91,9 @@ public class EntrevistadorCon extends GetData{
             for (int c = 0; c < cols.length; c++){
                 stmt = con.prepareStatement(String.format(cmd, cols[c]));
                 if(values[c] != null){
+                    if(c == 4){
+                        stmt.setInt(1, Integer.parseInt(values[c]));
+                    }
                     stmt.setString(1, values[c]);
                 }
                 stmt.setInt(2, id);

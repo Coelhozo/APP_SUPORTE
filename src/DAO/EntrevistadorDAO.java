@@ -19,7 +19,7 @@ public class EntrevistadorDAO {
         }catch (Exception e){
             System.out.println(e);
         }
-    } 
+    }
 
     public String criarComando(int p) {
         String cmd = null;
@@ -39,7 +39,7 @@ public class EntrevistadorDAO {
         if (p == 3) {
             cmd = "delete from Entrevistador where idEntrevistador = ?";
         } else if(p == 4){
-            cmd = "update user set %s = ? where idEntrevistador = ?";
+            cmd = "update Entrevistador set %s = ? where idEntrevistador = ?";
         }
 
         return cmd;
