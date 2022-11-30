@@ -4,12 +4,14 @@ import java.sql.*;
 import java.util.ArrayList;
 import DAO.Dados.UserDados;
 import DAO.Dados.AreaDados;
+import DAO.Dados.EntrevistadorDados;
 
 public class Conexao {
     private String url = "jdbc:mysql://localhost:3306/entervista", user = "root", password = "pedro"; 
     private Connection con = null;
     private AreaCon areaCon;
     private UsuarioCon userCon;
+    private EntrevistadorCon entreCon;
 
     //conexao para as areas
     public Conexao(String cmd, int p, String nome, Integer id) throws SQLException{
@@ -39,12 +41,29 @@ public class Conexao {
         }
     }
 
+    public Conexao(String cmd, int p, String nome, String cpf, String rg, String dataNasc, String matricula, Integer id) throws SQLException{
+
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(url, user, password);
+
+            entreCon = new EntrevistadorCon(cmd, con, nome, cpf, rg, dataNasc, matricula, p, id);
+            con.close();
+        }catch (Exception e){
+            System.out.println("Não foi possível completar a conexão pra usuário: "+e.getMessage());
+        }
+    }
+
     public ArrayList<AreaDados> getAreas(){
         return areaCon.getAllAreas();
     }
 
     public ArrayList<UserDados> getUsuarios(){
         return userCon.getUsuarios();
+    }
+
+    public ArrayList<EntrevistadorDados> getEntrevistadores(){
+        return entreCon.getAllEntrevistadores();
     }
     
 }
